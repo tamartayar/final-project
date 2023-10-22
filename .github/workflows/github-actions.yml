@@ -122,6 +122,6 @@ jobs:
       - name: build the services
         run: |
           cd ${{ github.workspace }}
-          docker-compose --help 
+          docker-compose up -d .
           docker ps
 
