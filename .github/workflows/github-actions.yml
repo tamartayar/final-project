@@ -135,6 +135,7 @@ jobs:
           curl https://google.com
       - name: checking app
         run: |
+          docker ps
           curl http://localhost:3000
           # curl -o /dev/null -s -w "%{http_code}\n" http://localhost:3000 -f
       
