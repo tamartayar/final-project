@@ -122,6 +122,11 @@ jobs:
       - name: build the services
         run: |
           cd ${{ github.workspace }}
-          docker-compose up -d 
+          docker-compose up -d
+      - name: docker ps
           docker ps
+      - name: checking app
+        run:
+          curl http://localhost:3000
+          curl -o /dev/null -s -w "%{http_code}\n" http://localhost:3000 -f
 
