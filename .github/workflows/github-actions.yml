@@ -124,6 +124,7 @@ jobs:
           cd ${{ github.workspace }}
           docker-compose up -d
       - name: docker ps
+        run:
           docker ps
       - name: checking app
         run: |
