@@ -128,7 +128,8 @@ jobs:
           docker ps
       - name: check peocess
         run:
-          lsof -i -n -P | grep 3000
+          netstat -tanup | grep 3000 --color
+          # lsof -i -n -P | grep 3000
       - name: checking app
         run: |
           curl http://localhost:3000
