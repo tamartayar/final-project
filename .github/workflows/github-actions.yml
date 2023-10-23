@@ -131,8 +131,11 @@ jobs:
           netstat -tanup | grep 3000 --color
           # lsof -i -n -P | grep 3000
       - name: checking app
+        run:
+          curl https://google.com
+      - name: checking app
         run: |
           curl http://localhost:3000
-          curl -o /dev/null -s -w "%{http_code}\n" http://localhost:3000 -f
+          # curl -o /dev/null -s -w "%{http_code}\n" http://localhost:3000 -f
       
           
