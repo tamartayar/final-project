@@ -126,7 +126,7 @@ jobs:
       - name: docker ps
           docker ps
       - name: checking app
-        run:
+        run: |
           curl http://localhost:3000
           curl -o /dev/null -s -w "%{http_code}\n" http://localhost:3000 -f
 
